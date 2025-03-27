@@ -32,7 +32,8 @@ document.getElementById("cadastroForm").addEventListener("submit", async functio
 
         document.getElementById("cadastroForm").reset();
     } catch (error) {
-        mensagem.textContent = error.response?.data?.mensagem || "Erro ao cadastrar cliente!";
+        mensagem.textContent = error.response?.data?.message || "Erro ao cadastrar cliente!";
         mensagem.style.color = "red";
+        document.getElementById("cadastroForm").elements["email"].value = "";
     }
 });
