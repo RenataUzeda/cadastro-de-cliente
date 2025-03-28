@@ -8,13 +8,4 @@ const gerarToken = (payload) => {
     return jwt.sign(payload, secret, { expiresIn: '8h' });
 }
 
-const verificarToken = (token) =>  {
-    return new Promise((resolve, reject) => {
-        jwt.verify(token, secret, (err, decoded) => {
-            if (err) return reject(err);
-            resolve(decoded);
-        });
-    });
-}
-
-module.exports = { gerarToken, verificarToken };
+module.exports = gerarToken

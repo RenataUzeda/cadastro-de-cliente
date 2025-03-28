@@ -1,7 +1,7 @@
 require('dotenv').config();
 const knex = require('../database/dbConnection');
 const bcrypt = require('bcryptjs');
-const { gerarToken } = require('../src/config/jwt');
+const gerarToken = require('../src/config/jwt');
 
 const registerController = async (req, res) => {
   try {
